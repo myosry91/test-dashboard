@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "wallet": "المحفظة",
+    "violations": "مخالفاتي",
+    "reservation": "حجوزاتي",
+    "units": "الوحدات"
+  },
+  "logout": "خروج",
+  "leftmenu": {
+    "home": "الرئيسية",
+    "processes": "العمليات",
+    "sectors": "القطاعات",
+    "units": "الوحدات",
+    "reports": "التقارير",
+    "setting": "اعدادات"
+  },
+  "mainStat": {
+    "available": "رصيد المحفظة المتاح",
+    "unapproved": "عدد العقود الغير معتمدة",
+    "amount": "قيمة العقود الغير معتمدة",
+    "deleted": "العقود الملغاه"
+  }
+}

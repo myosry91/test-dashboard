@@ -1,0 +1,23 @@
+{
+  "menu": {
+    "wallet": "Wallet",
+    "violations": "Violations",
+    "reservation": "Reservation",
+    "units": "Units"
+  },
+  "logout": "Log Out",
+  "leftmenu": {
+    "home": "Home",
+    "processes": "Processes",
+    "sectors": "Sectors",
+    "units": "Units",
+    "reports": "Reports",
+    "setting": "Setting"
+  },
+  "mainStat": {
+    "available": "Available wallet balance",
+    "unapproved": "Number of unapproved contracts",
+    "amount": "Amount of unapproved contracts",
+    "deleted": "Deleted contracts"
+  }
+}
