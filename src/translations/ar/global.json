@@ -19,5 +19,12 @@
     "unapproved": "عدد العقود الغير معتمدة",
     "amount": "قيمة العقود الغير معتمدة",
     "deleted": "العقود الملغاه"
+  },
+  "headers": {
+    "totalcontracts": "اجمالي العقود",
+    "totalwallet": "اجمالي المحفظة",
+    "paidcontracts":"العقود المدفوعة",
+    "unpaidcontracts":"العقود غير المدفوعة",
+    "canceledcontracts":"العقود الملغية"
   }
 }

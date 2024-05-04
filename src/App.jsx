@@ -11,8 +11,8 @@ export default function App() {
     <LanguageContext.Provider value={{ language, setLanguage }}>
     <div className="">
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/" element={<Dashboard />} />
       </Routes>
     </div>
     </LanguageContext.Provider>

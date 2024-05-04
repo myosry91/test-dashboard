@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageContext from "../context/LanguageContext";
 import MaiPieChart from "./MainPieChart";
-
+import pieWebp from "../assets/pie.webp";
 
 interface MainStatCardProps {
   details: string;
@@ -17,8 +17,8 @@ const MainStatCard: React.FC<MainStatCardProps> = ({
 }) => {
   const [t, i18n] = useTranslation("global");
   const { language } = useContext(LanguageContext);
-  const data = [stat, 100 - stat]; 
-  console.log(data)
+  const data = [stat, 100 - stat];
+  console.log(data);
 
   useEffect(() => {
     i18n.changeLanguage(language);
@@ -26,15 +26,16 @@ const MainStatCard: React.FC<MainStatCardProps> = ({
 
   return (
     <div
-      className={`flex bg-white w-[300px] h-[150px] m-4 p-10 gap-4 shadow-2xl justify-center items- rounded-md`}
+      className={`flex items-center bg-white w-[300px] h-[150px] m-4 pr-2 gap-4 shadow-2xl justify-start rounded-md`}
     >
       <div className="">
-        <MaiPieChart />
+        {/* <MaiPieChart /> */}
+        <img width={150} height={150} src={pieWebp} alt="Pie chart"/>
       </div>
 
       <div className=" w-[50%]">
         <div className="text-[15px]">{details}</div>
-        <div className="text-[10px] my-4">{total}</div>
+        <div className="text-[12px] mt-4">{total}</div>
       </div>
     </div>
   );

@@ -19,5 +19,12 @@
     "unapproved": "Number of unapproved contracts",
     "amount": "Amount of unapproved contracts",
     "deleted": "Deleted contracts"
+  },
+  "headers":{
+    "totalcontracts":"Total contracts",
+    "totalwallet":"Total wallet",
+    "paidcontracts":"Paid contracts",
+    "unpaidcontracts":"Unpaid contracts",
+    "canceledcontracts":"Canceled contracts"
   }
 }

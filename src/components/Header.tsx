@@ -20,7 +20,7 @@ const Header: React.FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <div className="bg-white h-[70px] pb-2 px-4 w-full flex items-end justify-between">
+    <div className="sticky bg-white h-[70px] pb-2 px-4 w-full flex items-end justify-between">
       <div className="flex-1 flex gap-3 items-center">
         <button className="sign-button max-sm:hidden">{t("logout")}</button>
         <FaRegUser className="link-hover max-sm:mb-3" />
