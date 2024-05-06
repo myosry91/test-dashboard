@@ -4,15 +4,24 @@ import LanguageContext from "../context/LanguageContext";
 import MainStatCard from "./MainStatCard";
 import SmallCard from "./SmallCard";
 import BigCard from "./BigCard";
+import DropMenuContext from "../context/DarkLightContext";
+import Row1 from "./heroComponents/Row1";
+import Row2 from "./heroComponents/Row2";
+import Row3 from "./heroComponents/Row3";
+import Row4 from "./heroComponents/Row4";
+import { Box, Typography } from "@mui/material";
 
 interface Person {
   id: number;
   details: string;
   total: number;
-  stat: number;
+  stat: any;
 }
 
 const HeroSection: React.FC = () => {
+  // show drop down menu
+  // const { showMenu, setShowMenu } = useContext(DropMenuContext);
+
   const [t, i18n] = useTranslation("global");
   const { language } = useContext(LanguageContext);
 
@@ -27,15 +36,70 @@ const HeroSection: React.FC = () => {
     { id: 4, details: t("mainStat.deleted"), total: 2, stat: 50 },
   ];
 
+  const data1 = [
+    {
+      id: "javascript",
+
+      value: 70,
+      color: "hsl(111, 90%, 90%)",
+    },
+    {
+      id: "sass",
+      value: 30,
+      color: "hsl(22, 90%, 90%)",
+    },
+  ];
+
+  const data2 = [
+    {
+      id: t("mainStat.available").slice(0, 9),
+      label: t("mainStat.available").slice(0, 9),
+      value: 70,
+      color: "hsl(22, 90%, 90%)",
+    },
+    {
+      id: t("mainStat.unapproved").slice(0, 9),
+      label: t("mainStat.unapproved").slice(0, 9),
+      value: 20,
+      color: "hsl(111, 90%, 90%)",
+    },
+    ,
+    {
+      id: t("mainStat.deleted").slice(0, 9),
+      label: t("mainStat.deleted").slice(0, 9),
+      value: 10,
+      color: "hsl(22, 90%, 90%)",
+    },
+  ];
+
   return (
-    <div className="flex-3 mt-12 pr-6 h-[80vh] overflow-scroll">
-      <div className="flex justify-center flex-wrap">
+    <div className="">
+      <Row1 />
+      <Box sx={{ textAlign: "right" }}>
+        <Typography sx={{ padding: "20px 6px" }} variant="h6">
+          {t("headers.totalcontracts")}
+        </Typography>
+      </Box>
+      <Row2 />
+      <Box sx={{ textAlign: "right" }}>
+        <Typography sx={{ padding: "20px 6px"}} variant="h6">
+          {t("headers.totalwallet")}
+        </Typography>
+      </Box>
+      <Row3 />
+      <Box sx={{ textAlign: "right" }}>
+        <Typography sx={{ padding: "6px 6px" }} variant="h6">
+          {t("headers.booking")}
+        </Typography>
+      </Box>
+      <Row4 />
+      {/* <div className="flex justify-between flex-wrap">
         {mainStat.map((mainStatCard) => (
           <MainStatCard
             key={mainStatCard.id}
             details={mainStatCard.details}
             total={mainStatCard.total}
-            stat={mainStatCard.stat}
+            stat={data1}
           />
         ))}
       </div>
@@ -43,7 +107,7 @@ const HeroSection: React.FC = () => {
         <h2>{t("headers.totalcontracts")}</h2>
       </div>
       <div className="flex pl-6 gap-3 max-md:flex-col max-md:justify-center max-md:items-center">
-        <SmallCard />
+        <SmallCard stat={data2} />
         <BigCard />
       </div>
       <div className="flex justify-end my-7">
@@ -51,8 +115,8 @@ const HeroSection: React.FC = () => {
       </div>
       <div className="flex pl-6 gap-3 max-md:flex-col max-md:justify-center max-md:items-center">
         <BigCard />
-        <SmallCard />
-      </div>
+        <SmallCard stat={data2} />
+      </div> */}
     </div>
   );
 };

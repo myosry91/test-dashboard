@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageContext from "../context/LanguageContext";
 import line from "../assets/line.png"
+import { Box } from "@mui/material";
 interface BigCardProps {
  
 }
@@ -17,18 +18,42 @@ const BigCard: React.FC<BigCardProps> = () => {
   return (
     <div className="flex-3 flex max-md:flex-col justify-between p-3 big-card rounded-md shadow-2xl bg-white">
       <div className="flex flex-col items-end gap-4">
-        <h3>{t("headers.paidcontracts")}</h3>
-        <p>97855.52</p>
+        <Box
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            fontWeight: "bold",
+          }}
+        >
+          <h3>{t("headers.paidcontracts")}</h3>
+          <p>97855.52</p>
+        </Box>
         <img width={120} height={100} src={line} alt="line graph" />
       </div>
       <div className="flex flex-col items-end gap-4">
-        <h3>{t("headers.unpaidcontracts")}</h3>
-        <p>97855.52</p>
+        <Box
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            fontWeight: "bold",
+          }}
+        >
+          <h3>{t("headers.unpaidcontracts")}</h3>
+          <p>97855.52</p>
+        </Box>
         <img width={120} height={100} src={line} alt="line graph" />
       </div>
       <div className="flex flex-col items-end gap-4">
-        <h3>{t("headers.canceledcontracts")}</h3>
-        <p>97855.52</p>
+        <Box
+          style={{
+            backgroundColor: "white",
+            color: "black",
+            fontWeight: "bold",
+          }}
+        >
+          <h3>{t("headers.canceledcontracts")}</h3>
+          <p>97855.52</p>
+        </Box>
         <img width={120} height={100} src={line} alt="line graph" />
       </div>
     </div>

@@ -4,10 +4,11 @@ export default {
   theme: {
     extend: {},
     colors: {
-      primary: "#FD6729", // Example primary color
+      primary: "#F4F7FE", // Example primary color
       secondary: "#C8C4CC", // Example secondary color
       accent: "#f4f7fe", // Example accent color
       white: "#FFFFFF",
+      black: "#000000",
     },
     fontFamily: {
       san: ["Rajdhani", "sans-serif"], // Rajdhani as primary font

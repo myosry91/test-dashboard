@@ -25,6 +25,7 @@
     "totalwallet":"Total wallet",
     "paidcontracts":"Paid contracts",
     "unpaidcontracts":"Unpaid contracts",
-    "canceledcontracts":"Canceled contracts"
+    "canceledcontracts":"Canceled contracts",
+    "booking":"Booking"
   }
 }

@@ -23,8 +23,9 @@
   "headers": {
     "totalcontracts": "اجمالي العقود",
     "totalwallet": "اجمالي المحفظة",
-    "paidcontracts":"العقود المدفوعة",
-    "unpaidcontracts":"العقود غير المدفوعة",
-    "canceledcontracts":"العقود الملغية"
+    "paidcontracts": "العقود المدفوعة",
+    "unpaidcontracts": "العقود غير المدفوعة",
+    "canceledcontracts": "العقود الملغية",
+    "booking": "الحجز"
   }
 }

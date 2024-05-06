@@ -1,11 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageContext from "../context/LanguageContext";
-import pieWebp from "../assets/pie.webp";
+import { ResponsivePie } from "@nivo/pie";
+import { Box } from "@mui/material";
 
-interface SmallCardProps {}
+interface SmallCardProps {
+  stat: any;
+}
 
-const SmallCard: React.FC<SmallCardProps> = () => {
+const SmallCard: React.FC<SmallCardProps> = ({stat}) => {
   const [t, i18n] = useTranslation("global");
   const { language } = useContext(LanguageContext);
 
@@ -14,9 +17,28 @@ const SmallCard: React.FC<SmallCardProps> = () => {
   }, [language]);
 
   return (
-    <div className="flex-1 p-3 rounded-md shadow-2xl bg-white flex flex-col items-end gap-4 max-md:w-fit">
-      <h3>{t("headers.totalcontracts")}</h3>
-      <img width={150} height={150} src={pieWebp} alt="Pie chart" />
+    <div className="flex-1 p-3 rounded-md shadow-2xl bg-white flex flex-col items-center justify-center gap-4 max-md:w-fit">
+      <Box
+        style={{ backgroundColor: "white", color: "black", fontWeight: "bold" }}
+      >
+        <h3>{t("headers.totalcontracts")}</h3>
+      </Box>
+      <Box height={"100px"} width={"100px"}>
+        <ResponsivePie
+          data={stat}
+          margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+          innerRadius={0.2}
+          padAngle={0.7}
+          cornerRadius={3}
+          activeOuterRadiusOffset={8}
+          enableArcLinkLabels={false}
+          borderWidth={1}
+          borderColor={{
+            from: "color",
+            modifiers: [["darker", 0.2]],
+          }}
+        />
+      </Box>
     </div>
   );
 };

@@ -37,13 +37,14 @@ body {
   flex: 3;
 }
 
+
 @layer components {
   .sign-button {
     @apply border hover:text-[#aa9773] hover:bg-white hover:border-[#aa9773] bg-[#aa9773] text-white py-2 px-3 text-[12px] rounded-md transition duration-500 ease-in-out;
   }
 
   .link-hover {
-    @apply hover:text-[#aa9773] transition duration-500 ease-in-out;
+    @apply hover:text-[#aa9773] transform hover:scale-110 transition duration-500 ease-in-out;
   }
   .left-link {
     @apply w-full flex cursor-pointer gap-4 hover:bg-secondary justify-center items-center py-5 transition duration-500 ease-in-out;
