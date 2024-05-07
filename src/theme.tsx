@@ -15,7 +15,7 @@ export const getDesignTokens = (mode: any) => ({
           background: {
             default: "#FFFFFF",
             paper: "#FFFFFF",
-            
+            primary: "#FFFFFF",
           },
         }
       : {

@@ -27,5 +27,14 @@
     "unpaidcontracts": "العقود غير المدفوعة",
     "canceledcontracts": "العقود الملغية",
     "booking": "الحجز"
+  },
+  "table": {
+    "id": "م",
+    "unitsymbol": "رمز الوحدة",
+    "dateofentry": "تاريخ الدخول",
+    "exitdate": "تاريخ الخروج",
+    "status": "الحالة",
+    "active": "مفعلة",
+    "disactive": "غير مفعلة"
   }
 }

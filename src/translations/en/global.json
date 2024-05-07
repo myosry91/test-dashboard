@@ -27,5 +27,14 @@
     "unpaidcontracts":"Unpaid contracts",
     "canceledcontracts":"Canceled contracts",
     "booking":"Booking"
+  },
+  "table":{
+    "id": "ID",
+    "unitsymbol":"Unit symbol",
+    "dateofentry": "Date of entry",
+    "exitdate": "Exit date",
+    "status":"status",
+    "active":"active",
+    "disactive":"disactive"
   }
 }

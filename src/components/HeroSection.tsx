@@ -76,19 +76,40 @@ const HeroSection: React.FC = () => {
     <div className="">
       <Row1 />
       <Box sx={{ textAlign: "right" }}>
-        <Typography sx={{ padding: "20px 6px" }} variant="h6">
+        <Typography
+          sx={{
+            padding: "20px 6px",
+            fontWeight: "bold",
+            fontFamily: "Rajdhani",
+          }}
+          variant="h6"
+        >
           {t("headers.totalcontracts")}
         </Typography>
       </Box>
       <Row2 />
       <Box sx={{ textAlign: "right" }}>
-        <Typography sx={{ padding: "20px 6px"}} variant="h6">
+        <Typography
+          sx={{
+            padding: "20px 6px",
+            fontWeight: "bold",
+            fontFamily: "Rajdhani",
+          }}
+          variant="h6"
+        >
           {t("headers.totalwallet")}
         </Typography>
       </Box>
       <Row3 />
       <Box sx={{ textAlign: "right" }}>
-        <Typography sx={{ padding: "6px 6px" }} variant="h6">
+        <Typography
+          sx={{
+            padding: "6px 6px",
+            fontWeight: "bold",
+            fontFamily: "Rajdhani",
+          }}
+          variant="h6"
+        >
           {t("headers.booking")}
         </Typography>
       </Box>

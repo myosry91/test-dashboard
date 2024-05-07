@@ -34,6 +34,7 @@ const AppBar: FC<AppBarProps> = styled(MuiAppBar, {
 const TobBar: FC<{ open: boolean; handleDrawerOpen: () => void }> = ({
   open,
   handleDrawerOpen,
+  isSmallDevice,
 }) => {
   // change lang
   const { language, setLanguage } = useContext(LanguageContext);
@@ -68,7 +69,7 @@ const TobBar: FC<{ open: boolean; handleDrawerOpen: () => void }> = ({
               <button className="sign-button max-lg:hidden">
                 {t("logout")}
               </button>
-              <FaRegUser className="link-hover max-lg:m-2 max-lg:w-5 max-lg:h-5" />
+              <FaRegUser className="link-hover max-lg:m-3 max-lg:w-5 max-lg:h-5" />
             </div>
 
             <div className="flex-3 w-full">

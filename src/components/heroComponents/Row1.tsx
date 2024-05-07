@@ -135,6 +135,7 @@ const Row1: FC = () => {
             justifyContent: "space-between",
             flex: isLargeDevice ? 1 : "unset",
           }}
+          key={mainStats.id}
         >
           <Box position="relative">
             {/* chart */}

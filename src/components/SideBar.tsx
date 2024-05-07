@@ -85,6 +85,7 @@ const SideBar: FC<SideBarProps> = ({ open, handleDrawerClose, setMode }) => {
         variant="persistent"
         anchor="right"
         open={open}
+        
       >
         <DrawerHeader>
           <Stack direction="row" spacing={2} justifyContent="space-between">

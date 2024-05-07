@@ -20,6 +20,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { HeroSection, SideBar, TopBar } from "../../components";
 import { blue } from "@mui/material/colors";
 import { getDesignTokens } from "../../theme";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const drawerWidth = 240;
 
@@ -80,13 +81,18 @@ export default function PersistentDrawerRight() {
   );
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
   
+const isSmallDevice = useMediaQuery("(max-width: 640px)");
 
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: "flex", position: "relative" }}>
         <CssBaseline />
         {/* Header */}
-        <TopBar handleDrawerOpen={handleDrawerOpen} open={open} />
+        <TopBar
+          handleDrawerOpen={handleDrawerOpen}
+          open={open}
+          isSmallDevice={isSmallDevice}
+        />
         {/* Main */}
         <Main
           style={
@@ -97,7 +103,9 @@ export default function PersistentDrawerRight() {
           open={open}
         >
           <DrawerHeader />
-          <HeroSection />
+          <Box sx={{ display: open && isSmallDevice ? "none" : "unset" }}>
+            <HeroSection />
+          </Box>
         </Main>
         {/* R ight side section */}
         <SideBar

@@ -5,8 +5,12 @@ import { useTranslation } from "react-i18next";
 import LanguageContext from "../../context/LanguageContext";
 import { ResponsivePie } from "@nivo/pie";
 import { Box } from "@mui/material";
+import Card from "./Card";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Row2: FC = () => {
+  const isSmallDevice = useMediaQuery("(max-width: 640px)");
+
   const [t, i18n] = useTranslation("global");
   const { language } = useContext(LanguageContext);
 
@@ -40,7 +44,7 @@ const Row2: FC = () => {
   ];
   return (
     <Stack
-      direction={"row"}
+      direction={{ md: "row", sm: "column" }}
       flexWrap={"wrap"}
       gap={1}
       justifyContent={{ xs: "center", md: "space-between" }}
@@ -52,20 +56,34 @@ const Row2: FC = () => {
           display: "flex",
           // justifyContent: "space-between",
           flexDirection: "column",
+          justifyContent: "space-around",
           flex: 1,
         }}
       >
         <Box sx={{ textAlign: "right" }}>
-          <Typography sx={{ padding: "20px 6px" }} variant="h6">
+          <Typography
+            sx={{
+              padding: "20px 6px",
+              fontSize: "16px",
+              fontFamily: "Rajdhani",
+              fontWeight: "bold",
+              fontFamily: "Rajdhani",
+            }}
+            variant="h6"
+          >
             {t("headers.totalcontracts")}
           </Typography>
         </Box>
 
-        <Stack direction="row">
+        <Stack
+          direction="row"
+          justifyContent="space-around"
+          alignItems="center"
+        >
           <Box>
             <Stack
               direction={language === "en" ? "row-reverse" : "row"}
-              justifyContent="start"
+              justifyContent={language === "en" ? "start" : "end"}
             >
               <Typography
                 variant="body2"
@@ -74,6 +92,7 @@ const Row2: FC = () => {
                   fontWeight: "bold",
                   marginRight: "10px",
                   marginLeft: "10px",
+                  fontFamily: "Rajdhani",
                 }}
               >
                 {t("headers.paidcontracts")}
@@ -88,13 +107,18 @@ const Row2: FC = () => {
                 }}
               />
             </Stack>
-            <Stack direction={language === "en" ? "row-reverse" : "row"}>
+            <Stack
+              direction={language === "en" ? "row-reverse" : "row"}
+              justifyContent={language === "en" ? "start" : "end"}
+            >
               <Typography
                 variant="body2"
                 sx={{
                   fontSize: "12px",
                   fontWeight: "bold",
                   marginRight: "10px",
+                  marginLeft: "10px",
+                  fontFamily: "Rajdhani",
                 }}
               >
                 {t("headers.unpaidcontracts")}
@@ -109,13 +133,18 @@ const Row2: FC = () => {
                 }}
               />
             </Stack>
-            <Stack direction={language === "en" ? "row-reverse" : "row"}>
+            <Stack
+              direction={language === "en" ? "row-reverse" : "row"}
+              justifyContent={language === "en" ? "start" : "end"}
+            >
               <Typography
                 variant="body2"
                 sx={{
                   fontSize: "12px",
                   fontWeight: "bold",
                   marginRight: "10px",
+                  marginLeft: "10px",
+                  fontFamily: "Rajdhani",
                 }}
               >
                 {t("headers.canceledcontracts")}
@@ -132,10 +161,10 @@ const Row2: FC = () => {
             </Stack>
           </Box>
           {/* chart */}
-          <Box height={"80px"} width={"80px"}>
+          <Box height={"100px"} width={"100px"}>
             <ResponsivePie
               data={data2}
-              margin={{ top: 10, right: 0, bottom: 10, left: 0 }}
+              margin={{ top: 1, right: 0, bottom: 10, left: 0 }}
               innerRadius={0.0}
               padAngle={0.7}
               cornerRadius={0}
@@ -157,10 +186,17 @@ const Row2: FC = () => {
           minWidth: "260px",
           p: 1.5,
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: `${isSmallDevice ? "center" : "space-between"}`,
+          alignItems: `${isSmallDevice ? "center" : "space-between"}`,
+          flexDirection: `${isSmallDevice ? "column" : "row"}`,
+          gap: "20px",
           flex: 2,
         }}
-      ></Paper>
+      >
+        <Card color={"#C2BDC6"} header={t("headers.canceledcontracts")} />
+        <Card color={"#867B8D"} header={t("headers.canceledcontracts")} />
+        <Card color={"#493954"} header={t("headers.canceledcontracts")} />
+      </Paper>
     </Stack>
   );
 };
