@@ -10,6 +10,7 @@ import Row2 from "./heroComponents/Row2";
 import Row3 from "./heroComponents/Row3";
 import Row4 from "./heroComponents/Row4";
 import { Box, Typography } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 
 interface Person {
   id: number;
@@ -21,6 +22,9 @@ interface Person {
 const HeroSection: React.FC = () => {
   // show drop down menu
   // const { showMenu, setShowMenu } = useContext(DropMenuContext);
+
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
 
   const [t, i18n] = useTranslation("global");
   const { language } = useContext(LanguageContext);
@@ -78,7 +82,7 @@ const HeroSection: React.FC = () => {
       <Box sx={{ textAlign: "right" }}>
         <Typography
           sx={{
-            padding: "20px 6px",
+            padding: "30px 6px",
             fontWeight: "bold",
             fontFamily: "Rajdhani",
           }}
@@ -91,7 +95,7 @@ const HeroSection: React.FC = () => {
       <Box sx={{ textAlign: "right" }}>
         <Typography
           sx={{
-            padding: "20px 6px",
+            padding: "30px 6px",
             fontWeight: "bold",
             fontFamily: "Rajdhani",
           }}
@@ -104,7 +108,7 @@ const HeroSection: React.FC = () => {
       <Box sx={{ textAlign: "right" }}>
         <Typography
           sx={{
-            padding: "6px 6px",
+            padding: "30px 6px",
             fontWeight: "bold",
             fontFamily: "Rajdhani",
           }}

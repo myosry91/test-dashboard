@@ -7,20 +7,11 @@ import {
 } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
 import CssBaseline from "@mui/material/CssBaseline";
-import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import { HeroSection, SideBar, TopBar } from "../../components";
-import { blue } from "@mui/material/colors";
 import { getDesignTokens } from "../../theme";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 
 const drawerWidth = 240;
 
@@ -80,7 +71,6 @@ export default function PersistentDrawerRight() {
       : "light"
   );
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
-  
 const isSmallDevice = useMediaQuery("(max-width: 640px)");
 
   return (
@@ -91,7 +81,7 @@ const isSmallDevice = useMediaQuery("(max-width: 640px)");
         <TopBar
           handleDrawerOpen={handleDrawerOpen}
           open={open}
-          isSmallDevice={isSmallDevice}
+          
         />
         {/* Main */}
         <Main
@@ -103,7 +93,7 @@ const isSmallDevice = useMediaQuery("(max-width: 640px)");
           open={open}
         >
           <DrawerHeader />
-          <Box sx={{ display: open && isSmallDevice ? "none" : "unset" }}>
+          <Box sx={{ display: open && isSmallDevice ? "none" : "unset"}}>
             <HeroSection />
           </Box>
         </Main>

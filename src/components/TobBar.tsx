@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { FaRegUser } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import LanguageContext from "../context/LanguageContext";
-import DropMenuContext from "../context/DarkLightContext";
+import { useTheme } from '@mui/material/styles';
 
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
@@ -34,8 +34,9 @@ const AppBar: FC<AppBarProps> = styled(MuiAppBar, {
 const TobBar: FC<{ open: boolean; handleDrawerOpen: () => void }> = ({
   open,
   handleDrawerOpen,
-  isSmallDevice,
 }) => {
+  const theme = useTheme();
+  const isDarkMode = theme.palette.mode === 'dark';
   // change lang
   const { language, setLanguage } = useContext(LanguageContext);
   const [t, i18n] = useTranslation("global");
@@ -53,12 +54,12 @@ const TobBar: FC<{ open: boolean; handleDrawerOpen: () => void }> = ({
   return (
     <AppBar
       style={{
-        // backgroundColor: "primary",
-        // color: "black",
-        // backgroundColor: "transparent",
         fontWeight: "bold",
         boxShadow: "none",
       }}
+      sx={{ backgroundColor: isDarkMode ? '#493954' : 'white',
+      color: isDarkMode ? 'white' : 'black',
+    borderBottom:"1px solid gray" }}
       position="fixed"
       open={open}
     >

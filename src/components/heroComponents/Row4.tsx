@@ -1,11 +1,10 @@
 import React, { FC } from "react";
 import { DataGrid, GridRowsProp, GridColDef } from "@mui/x-data-grid";
-import { Paper, Stack, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { useContext, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import LanguageContext from "../../context/LanguageContext";
 import { Box } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material";
 
 const Row4: FC = () => {
@@ -44,13 +43,14 @@ const Row4: FC = () => {
       flex: 1,
       align: "center",
       headerAlign: "center",
-      renderCall: ({ row: { col1 } }) => {
-        console.log(col1);
-        return;
-        <Box sx={{ background: "red" }}>
-          <Typography>{col1}</Typography>
-        </Box>;
-      },
+      // renderCell: ({ row: { col1 } }) => {
+      //   console.log(col1);
+      //   return(
+      //   <Box sx={{ background: "red", display: "flex", justifyContent:"center", alignItems:"center" }}>
+      //     <Typography sx={{width: "80px"}}>{col1}</Typography>
+          
+      //   </Box>)
+      // },
     },
 
     {
@@ -83,7 +83,7 @@ const Row4: FC = () => {
     },
   ];
   return (
-    <Box style={{}}>
+    <Box sx={{maxWidth: "95vw"}}>
       <DataGrid rows={rows} columns={columns} />
     </Box>
   );

@@ -67,7 +67,6 @@ const Row2: FC = () => {
               fontSize: "16px",
               fontFamily: "Rajdhani",
               fontWeight: "bold",
-              fontFamily: "Rajdhani",
             }}
             variant="h6"
           >
@@ -169,6 +168,7 @@ const Row2: FC = () => {
               padAngle={0.7}
               cornerRadius={0}
               colors={customColors}
+              arcLabelsTextColor='white'
               activeOuterRadiusOffset={8}
               enableArcLinkLabels={false}
               borderWidth={1}
